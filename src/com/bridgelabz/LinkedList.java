@@ -32,6 +32,12 @@ public class LinkedList<T> {
         node.next=tail;
     }
 
+    public T pop() {
+        T deletedElement = head.data;
+        head = head.next;
+        return deletedElement;
+    }
+
     void display() {
         Node<T> temp = head;
         while (temp != null) {

@@ -9,6 +9,8 @@ public class LinkedListMain {
 
         linkedList.insert(30);
 
+        linkedList.pop();
+
         linkedList.display();
     }
 }
