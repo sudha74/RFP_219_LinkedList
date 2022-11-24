@@ -4,9 +4,11 @@ public class LinkedListMain {
     public static void main(String[] args) {
         LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.push(70);
-        linkedList.push(56);
+        linkedList.push(29);
+        linkedList.push(28);
 
-        linkedList.insert(30);
+
+        linkedList.push(30);
 
         linkedList.display();
         System.out.println();
@@ -25,6 +27,5 @@ public class LinkedListMain {
         linkedList.display();
         System.out.println();
         System.out.println(linkedList.size());
-
     }
 }
