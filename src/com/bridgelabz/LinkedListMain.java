@@ -3,7 +3,6 @@ package com.bridgelabz;
 public class LinkedListMain {
     public static void main(String[] args) {
         LinkedList<Integer> linkedList = new LinkedList<>();
-
         linkedList.push(70);
         linkedList.push(56);
 
@@ -19,5 +18,7 @@ public class LinkedListMain {
         } else {
             System.out.println("Data not found");
         }
+        System.out.println(linkedList.insertAfter(30, 40));
+        System.out.println();
     }
 }
