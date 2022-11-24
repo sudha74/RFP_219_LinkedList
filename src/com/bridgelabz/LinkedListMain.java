@@ -8,8 +8,6 @@ public class LinkedListMain {
 
         linkedList.insert(30);
 
-        System.out.println(linkedList.popLast());
-
         linkedList.display();
         System.out.println();
 
@@ -20,5 +18,13 @@ public class LinkedListMain {
         }
         System.out.println(linkedList.insertAfter(30, 40));
         System.out.println();
+        linkedList.display();
+        System.out.println();
+
+        linkedList.popElement(40);
+        linkedList.display();
+        System.out.println();
+        System.out.println(linkedList.size());
+
     }
 }
