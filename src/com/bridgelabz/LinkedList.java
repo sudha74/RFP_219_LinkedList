@@ -1,17 +1,25 @@
 package com.bridgelabz;
 
-public class LinkedList<T> {
+public class LinkedList<T extends Comparable<T>> {
     Node<T> head;
     Node<T> tail;
 
-    void push(T data) {
+    public void push(T data) {
         Node<T> node = new Node<>(data);
-        if (head == null) {
-            head = node;
-            tail = node;
-        } else {
+        sortedInsert(node);
+    }
+
+    public void sortedInsert(Node<T> node) {
+        Node<T> temp = head;
+        if (temp == null || temp.data.compareTo(node.data) >= 0) {
             node.next = head;
             head = node;
+        } else {
+            while (temp.next != null && temp.next.data.compareTo(node.data) < 0)
+                temp = temp.next;
+
+            node.next = temp.next;
+            temp.next = node;
         }
     }
 
@@ -46,18 +54,12 @@ public class LinkedList<T> {
 
     }
 
-    void add(T data) {
+    public void add(T data) {
         Node<T> node = new Node<>(data);
-        if (head == null) {
-            head = node;
-            tail = node;
-        } else {
-            tail.next = node;
-            tail = node;
-        }
+        sortedInsert(node);
     }
 
-    void display() {
+    public void display() {
         Node<T> temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
